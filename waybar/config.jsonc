@@ -1,0 +1,104 @@
+{
+    "layer": "top", /*bar displayed in front (top) | behind (bottom)*/
+    "position": "top", /*positions (top, bottom, left, right)*/
+    "output": "DP-1",
+    "margin-bottom": 0,
+    "modules-left": [
+        "tray",
+        "wlr/taskbar"
+    ],
+    "modules-center": [
+        "clock#time",
+        "clock#date",
+        "hyprland/workspaces",
+        "custom/notifications",
+        "pulseaudio"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "default": "",
+            "urgent": ""
+        },
+        "persistent-workspaces": {
+            "*": 5 // 5 workspaces by default on every monitor
+        }
+    },
+
+    "tray": {
+        "icon-size": 25
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "on-click": "activate",
+        "on-click-middle": "close"
+    },
+
+    "clock#time": {
+        "tooltip": false,
+        "interval": 60,
+        "format": " {:%H:%M}"
+    },
+
+    "clock#date": {
+        "tooltip": false,
+        "interval": 60,
+        "format": "󰸘 {:%d/%m}"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-bluetooth": "{volume}% ",
+        "scroll-step": 1,
+        "on-click": "GTK_THEME=Adwaita:dark pavucontrol &", // das es in darkmode startet
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ],
+        "format-icons": [
+            "",
+            "",
+            "",
+            "󰝟"
+        ]
+    },
+
+    "custom/notifications": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t"
+    }
+    /*
+
+    "network": {
+        "interval": 2,
+        "interface": "enp8s0", //enp8s0 for lan | wlan0 for wifi
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": " {bandwidthDownBits}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "format-alt": " {bandwidthUpBits}",
+        "max-length": 50
+    },*/
+}
+
+
+
+
+
+
+
+
+/*Wlan password 87576580847381543100*/

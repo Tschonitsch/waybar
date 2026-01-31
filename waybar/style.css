@@ -1,0 +1,228 @@
+* {
+    font-family: Monocraft;
+    border-radius: 0px;
+    min-height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+window#waybar {
+    background: transparent,
+}
+
+.modules-center {
+    background: rgba(10, 10, 10, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+}
+
+.modules-left {
+    background: rgba(10, 10, 10, 0.6);
+    border-radius: 10px;
+    padding: 6px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+}
+
+.modules-right {
+    background: rgba(10, 10, 10, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+}
+
+tooltip {
+    background: rgba(10, 10, 10, 0.7);
+}
+
+tooltip label {
+    color: white;
+}
+
+/* 
+####################
+#    Workspaces    #
+####################
+
+    #workspaces
+    #workspaces button
+    #workspaces button.active
+    #workspaces button.visible
+    #workspaces button.urgent
+    #workspaces button.empty
+    #workspaces button.persistent
+    #workspaces button.hidden
+
+*/
+
+
+#workspaces {
+    background: transparent;
+    padding: 0;
+    margin: 0 10px 0 10px;
+    border: none;
+    box-shadow: none; 
+    min-width: 200px;
+}
+
+#workspaces button {
+    padding: 0px 6px;
+    margin: 0px 2px;
+    border-radius: 16px;
+    color: gray;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: rgba(60, 90, 250, 0.3);
+    color: white;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: white;
+    background-color: transparent;
+    background: transparent;
+    border: transparent;
+}
+
+#workspaces button.urgent {
+    color: white;
+    background-color: red;
+}
+
+#mode {
+    background: transparent;
+    border: transparent;
+}
+
+
+/* 
+####################
+#       Tray       #
+####################
+
+    #tray
+    #tray menu for the context menu
+    #tray > .passive for icons with status Passive
+    #tray > .active for icons with status Active
+    #tray > .needs-attention for icons with status NeedsAttention
+
+*/
+
+#tray {
+    background: transparent;
+}
+
+#tray menu {
+    background: rgba(10, 10, 10, 0.8);
+    font-size: 25px;
+}
+
+/* 
+####################
+#     Taskbar      #
+####################
+    
+    #taskbar
+    #taskbar button
+    #taskbar button.active
+    #taskbar button.minimized
+    #taskbar button.maximized
+    #taskbar button.fullscreen
+    #taskbar.empty
+
+*/
+
+#taskbar {
+    background: transparent;
+}
+
+#taskbar button {
+    background-color: transparent;
+    border: transparent;
+    color: transparent;
+}
+
+#taskbar.empty{
+    background-color: transparent;
+    border: transparent;
+}
+
+
+/* 
+####################
+#      Clock       #
+####################
+*/
+
+#clock {
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #e1d171;
+}
+/* 
+####################
+#     Network      #
+####################
+
+    #network
+    #network.disabled
+    #network.disconnected
+    #network.linked
+    #network.ethernet
+    #network.wifi
+
+*/
+
+#network {
+    background: transparent;
+}
+
+
+/* 
+####################
+#    Pulseaudio    #
+####################
+
+    #pulseaudio
+    #pulseaudio.bluetooth
+    #pulseaudio.muted
+    #pulseaudio.source-muted
+
+*/
+
+#pulseaudio {
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#custom-notifications {
+    background: transparent;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+#custom-power {
+    background: transparent;
+    padding-left: 5px;
+    padding-right: 4px;
+}
+
+menu {
+    font-family: "Monocraft";
+    font-size: 25px;
+    border-radius: 15px;
+    color: #B5E8E0;
+}
+menuitem {
+    border-radius: 15px;
+}
