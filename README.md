@@ -1,2 +1,2 @@
-# waybar
+# Waybar preview
 ![Preview](example.png)
