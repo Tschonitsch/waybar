@@ -1,12 +1,11 @@
 * {
+    color: white;
     font-family: Monocraft;
     border-radius: 0px;
     min-height: 25px;
     padding: 0;
     margin: 0;
 }
-
-
 
 window#waybar {
     background: transparent,
@@ -65,23 +64,17 @@ tooltip label {
     margin: 0 10px 0 10px;
     border: none;
     box-shadow: none; 
-    min-width: 200px;
+    /*min-width: 200px;*/
 }
 
 #workspaces button {
-    padding: 0px 6px;
+    padding: 0px 4px;
     margin: 0px 2px;
-    border-radius: 16px;
-    color: gray;
     background: transparent;
-    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: rgba(60, 90, 250, 0.3);
-    color: white;
-    min-width: 40px;
-    transition: all 0.3s ease-in-out;
+    background: transparent;
 }
 
 #workspaces button:hover {
@@ -115,7 +108,7 @@ tooltip label {
 
 */
 
-#tray {
+#tray passive {
     background: transparent;
 }
 
@@ -150,8 +143,8 @@ tooltip label {
 }
 
 #taskbar.empty{
-    background-color: transparent;
-    border: transparent;
+    min-width: 0;
+    padding: 0;
 }
 
 
@@ -207,15 +200,40 @@ tooltip label {
 
 #custom-notifications {
     background: transparent;
-    padding-left: 0px;
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
-#custom-power {
-    background: transparent;
-    padding-left: 5px;
-    padding-right: 4px;
+#power-profiles-daemon{
+    padding-right: 20px;
 }
+
+#network {
+    margin-right: 15px;
+}
+
+#custom-bluetooth {
+    padding-right: 20px;
+}
+
+#temperature {
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+#battery {
+    padding-right: 20px;
+}
+
+#battery.warning {
+    color: #ffaa00;
+}
+
+#battery.critical {
+    color: #ff4444;
+}
+
+
+
 
 menu {
     font-family: "Monocraft";
