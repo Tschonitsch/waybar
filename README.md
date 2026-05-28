@@ -1,2 +1,2 @@
 # Waybar preview
-![Preview](assets/example.mp4)
+![Preview](assets/example.gif)
