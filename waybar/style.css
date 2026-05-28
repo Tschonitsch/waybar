@@ -1,246 +1,162 @@
+@import "colors.conf";
 * {
-    color: white;
-    font-family: Monocraft;
-    border-radius: 0px;
-    min-height: 25px;
-    padding: 0;
-    margin: 0;
+  border: none;
+  border-radius: 1px;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font Propo';
+  font-size: 12px;
 }
 
 window#waybar {
-    background: transparent,
-}
-
-.modules-center {
-    background: rgba(10, 10, 10, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
 .modules-left {
-    background: rgba(10, 10, 10, 0.6);
-    border-radius: 10px;
-    padding: 6px 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
+    background-color: alpha(@surface, 0.6);
+    padding: 0 10px;
+    margin: 4px;
+    border-radius: 16px;
 }
 
-.modules-right {
-    background: rgba(10, 10, 10, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
+
+#pulseaudio{
+    color: @primary;
+    padding: 0 6px;
 }
 
-tooltip {
-    background: rgba(10, 10, 10, 0.7);
+#custom-launcher {
+    color: @primary;
+    padding: 0 6px;
 }
-
-tooltip label {
-    color: white;
+.modules-center {
+  padding: 0 15px;
+  background-color: alpha(@surface, 0.85);
+  border-radius: 1px 1px 99px 99px;
 }
-
-/* 
-####################
-#    Workspaces    #
-####################
-
-    #workspaces
-    #workspaces button
-    #workspaces button.active
-    #workspaces button.visible
-    #workspaces button.urgent
-    #workspaces button.empty
-    #workspaces button.persistent
-    #workspaces button.hidden
-
-*/
-
 
 #workspaces {
-    background: transparent;
-    padding: 0;
-    margin: 0 10px 0 10px;
-    border: none;
-    box-shadow: none; 
-    /*min-width: 200px;*/
+    padding: 0 24px;
+    margin: 4px;
+    border-radius: 99px;
+    background-color: alpha(@surface_container, 0.4);
 }
 
 #workspaces button {
-    padding: 0px 4px;
-    margin: 0px 2px;
-    background: transparent;
+  color: @on_surface;
+  padding: 0 6px;
 }
 
 #workspaces button.active {
-    background: transparent;
+  color: @on_primary;
+  background: alpha(@primary, 0.9);
+  border-radius: 18px;
+  margin: 6px 4px;
 }
 
-#workspaces button:hover {
-    color: white;
+#center2 {
+    color: @primary;
+    background-color: alpha(@surface, 0.6);
+    padding: 0 10px;
+    margin: 4px;
+    border-radius: 16px;
+}
+
+#center3 {
+    color: @primary;
+    background-color: alpha(@surface, 0.6);
+    padding: 0 10px;
+    margin: 4px;
+    border-radius: 16px;
+}
+
+#group-right1, #right1 {
+    background-color: alpha(@surface, 0.6);
+    padding: 0 10px;
+    margin: 4px;
+    border-radius: 16px;
+}
+
+#cpu, #memory, #disk {
+    font-weight: 700;
+    background-color: alpha(@surface_container, 0.5);
+    border-radius: 12px;
+    padding: 2px 10px;
+    margin: 4px 3px;
+}
+
+#custom-separator {
+    color: @surface_container_high;
+    font-size: 10px;
+    padding: 0 2px;
+}
+
+
+tooltip {
+  background: @surface;
+  border: 1px solid alpha(@on_surface, 0.2);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+tooltip label {
+  color: @on_surface;
+}
+
+#custom-expand-right,
+#custom-expand-iconl,
+#custom-expand-iconr {
+    color: @primary;
     background-color: transparent;
-    background: transparent;
-    border: transparent;
+    font-size: 14px;
+    padding: 0 5px;
 }
 
-#workspaces button.urgent {
-    color: white;
-    background-color: red;
+#custom-expand-iconl:hover,
+#custom-expand-iconr:hover {
+    color: @on_surface;
 }
 
-#mode {
-    background: transparent;
-    border: transparent;
+/* Right group */
+#bluetooth {
+    color: @primary;
+    padding: 0 6px;
 }
 
-
-/* 
-####################
-#       Tray       #
-####################
-
-    #tray
-    #tray menu for the context menu
-    #tray > .passive for icons with status Passive
-    #tray > .active for icons with status Active
-    #tray > .needs-attention for icons with status NeedsAttention
-
-*/
-
-#tray passive {
-    background: transparent;
-}
-
-#tray menu {
-    background: rgba(10, 10, 10, 0.8);
-    font-size: 25px;
-}
-
-/* 
-####################
-#     Taskbar      #
-####################
-    
-    #taskbar
-    #taskbar button
-    #taskbar button.active
-    #taskbar button.minimized
-    #taskbar button.maximized
-    #taskbar button.fullscreen
-    #taskbar.empty
-
-*/
-
-#taskbar {
-    background: transparent;
-}
-
-#taskbar button {
-    background-color: transparent;
-    border: transparent;
-    color: transparent;
-}
-
-#taskbar.empty{
-    min-width: 0;
-    padding: 0;
-}
-
-
-/* 
-####################
-#      Clock       #
-####################
-*/
-
-#clock {
-    background: transparent;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #e1d171;
-}
-/* 
-####################
-#     Network      #
-####################
-
-    #network
-    #network.disabled
-    #network.disconnected
-    #network.linked
-    #network.ethernet
-    #network.wifi
-
-*/
-
-#network {
-    background: transparent;
-}
-
-
-/* 
-####################
-#    Pulseaudio    #
-####################
-
-    #pulseaudio
-    #pulseaudio.bluetooth
-    #pulseaudio.muted
-    #pulseaudio.source-muted
-
-*/
-
-#pulseaudio {
-    padding-left: 10px;
-    padding-right: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-#custom-notifications {
-    background: transparent;
-    padding-right: 15px;
-}
-
-#power-profiles-daemon{
-    padding-right: 20px;
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @outline;
 }
 
 #network {
-    margin-right: 15px;
+    color: @primary;
+    padding: 0 6px;
 }
 
-#custom-bluetooth {
-    padding-right: 20px;
-}
-
-#temperature {
-    padding-left: 10px;
-    padding-right: 30px;
+#network.disconnected {
+    color: @outline;
 }
 
 #battery {
-    padding-right: 20px;
+    color: @primary;
+    padding: 0 6px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @primary;
 }
 
 #battery.warning {
-    color: #ffaa00;
+    color: @tertiary;
 }
 
 #battery.critical {
-    color: #ff4444;
+    color: @error;
+    animation: blink 1s step-start infinite;
 }
 
-
-
-
-menu {
-    font-family: "Monocraft";
-    font-size: 25px;
-    border-radius: 15px;
-    color: #B5E8E0;
-}
-menuitem {
-    border-radius: 15px;
+@keyframes blink {
+    50% { opacity: 0.4; }
 }

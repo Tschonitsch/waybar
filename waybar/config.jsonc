@@ -1,141 +1,235 @@
-{
-    "layer": "top", /*bar displayed in front (top) | behind (bottom)*/
-    "position": "top", /*positions (top, bottom, left, right)*/
-    "output": "DP-1",
-    "margin-bottom": 0,
-    "modules-left": [
-        "tray",
-        "wlr/taskbar"
-    ],
-    "modules-center": [
-        "clock#time",
-        "clock#date",
-        "hyprland/workspaces",
-        "custom/notifications",
-        "pulseaudio"
-    ],
-    "modules-right": [
-        "temperature",
-        "network",
-        "custom/bluetooth",
-        "power-profiles-daemon",
-        "battery"
-    ],
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {time} {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "10",
-            "default": "",
-            "urgent": "",
-            "active": ""
-        },
-        "persistent-workspaces": {
-            "*": 5        }
-    },
+/*    _    _             _                    _____              __ _       
+     | |  | |           | |                  /  __ \            / _(_)      
+     | |  | | __ _ _   _| |__   __ _ _ __    | /  \/ ___  _ __ | |_ _  __ _ 
+     | |/\| |/ _` | | | | '_ \ / _` | '__|   | |    / _ \| '_ \|  _| |/ _` |
+     \  /\  / (_| | |_| | |_) | (_| | |      | \__/\ (_) | | | | | | | (_| |
+      \/  \/ \__,_|\__, |_.__/ \__,_|_|       \____/\___/|_| |_|_| |_|\__, |
+                    __/ |                                              __/ |
+                   |___/                                              |___/ */
 
-    "tray": {
-        "icon-size": 25
-    },
 
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "on-click-middle": "close"
-    },
+//═══════════════════════════════════════ Setting ════════════════════════════════════╗
+{                                                                                   //║
+  "reload_style_on_change": true,                                                   //║
+  "layer": "top",                                                                   //║
+  "output": "DP-1",                                                                 //║
+  "position": "top",                                                                //║
+  "spacing": 0,                                                                     //║
+  "height": 37,                                                                     //║
+  "margin-top": 0,                                                                  //║
+  "margin-left": 0,                                                                 //║
+  "margin-right": 0,                                                                //║
+                                                                                    //║
+//═══════════════════════════════════════ Setting ════════════════════════════════════╝
 
-    "clock#time": {
-        "tooltip": false,
-        "interval": 60,
-        "format": " {:%H:%M}"
-    },
+//═══════════════════════════════════════ Modules ════════════════════════════════════╗
+                                                                                    //║
+  "modules-left": [                                                                 //║
+    "group/left1-expander",                                                         //║
+    "custom/active_window"                                                          //║
+  ],                                                                                //║
+                                                                                    //║
+  "modules-center": [                                                               //║
+    "group/center3-expander",                                                       //║
+    "hyprland/workspaces",                                                          //║
+    "group/center2-expander"                                                        //║
+  ],                                                                                //║
+                                                                                    //║
+  "modules-right": [                                                                //║
+    "group/right1"                                                                  //║
+  ],                                                                                //║
+                                                                                    //║
+//═══════════════════════════════════════ Modules ════════════════════════════════════╝
 
-    "clock#date": {
-        "tooltip": false,
-        "interval": 60,
-        "format": "󰸘 {:%d/%m}"
-    },
+//═══════════════════════════════════════ Expand ═════════════════════════════════════╗
+                                                                                    //║
+  "group/left1-expander": {                                                         //║
+    "orientation": "inherit",                                                       //║
+    "drawer": {                                                                     //║
+      "transition-duration": 600,                                                   //║
+      "transition-left-to-right": true                                              //║
+    },                                                                              //║
+    "modules": [                                                                    //║
+      "custom/launcher",                                                            //║
+      "custom/separator#blank2",                                                    //║
+      "tray",                                                                       //║
+      "wlr/taskbar"                                                                 //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+  "group/center2": {                                                                //║
+    "orientation": "inherit",                                                       //║
+    "modules": [                                                                    //║
+      "mpris",                                                                      //║
+      "pulseaudio"                                                                  //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+  "group/center2-expander": {                                                       //║
+    "orientation": "inherit",                                                       //║
+    "drawer": {                                                                     //║
+      "transition-duration": 600,                                                   //║
+      "transition-left-to-right": false,                                            //║
+      "children-class": "center2-group-item"                                        //║
+    },                                                                              //║
+    "modules": [                                                                    //║
+      "custom/expand-iconr",                                                        //║
+      "group/center2"                                                               //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+  "group/center3": {                                                                //║
+    "orientation": "inherit",                                                       //║
+    "modules": [                                                                    //║
+      "clock#time",                                                                 //║
+      "custom/separator#blank",                                                     //║
+      "clock#date"                                                                  //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+  "group/center3-expander": {                                                       //║
+    "orientation": "inherit",                                                       //║
+    "drawer": {                                                                     //║
+      "transition-duration": 600,                                                   //║
+      "children-class": "center3-group-item"                                        //║
+    },                                                                              //║
+    "modules": [                                                                    //║
+      "custom/expand-iconl",                                                        //║
+      "group/center3"                                                               //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+  "group/right1": {                                                                 //║
+    "orientation": "inherit",                                                       //║
+    "modules": [                                                                    //║
+      "group/right1-expander"                                                       //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+  "group/right1-expander": {                                                        //║
+    "orientation": "inherit",                                                       //║
+    "drawer": {                                                                     //║
+      "transition-duration": 600,                                                   //║
+      "transition-left-to-right": false                                             //║
+    },                                                                              //║
+    "modules": [                                                                    //║
+      "custom/expand-right",                                                        //║
+      "network",                                                                    //║
+      "bluetooth",                                                                  //║
+      "battery"                                                                     //║
+    ]                                                                               //║
+  },                                                                                //║
+                                                                                    //║
+//═══════════════════════════════════════ Expand ═════════════════════════════════════╝
 
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-muted": "󰝟",
-        "format-bluetooth": "{volume}% ",
-        "scroll-step": 1,
-        "on-click": "kitty alsamixer",
-        "ignored-sinks": [
-            "Easy Effects Sink"
-        ],
-        "format-icons": [
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
 
-    "custom/notifications": {
-        "tooltip": false,
-        "format": "",
-        "on-click": "swaync-client -t"
-    },
+//═══════════════════════════════════════ Icons ══════════════════════════════════════╗
+                                                                                    //║
+"custom/expand-iconl": { "format": "  ", "tooltip": false },                       //║
+"custom/expand-right": { "format": "", "tooltip": false },                         //║
+"custom/expand-iconr": { "format": "  ", "tooltip": false },                       //║
+"custom/separator#blank": { "format": " ", "tooltip": false },                      //║
+"custom/separator#blank2": { "format": "  ", "tooltip": false },                    //║
+                                                                                    //║
+//═══════════════════════════════════════ Icons ══════════════════════════════════════╝
 
-    "network": {
-        "interval": 2,
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤯",
-        "tooltip-format": "{ifname}: {ipaddr}\n{signalStrength}%",
-        "on-click": "kitty impala",
-        "format-icons": [
-            "󰤟",  // sehr schwach
-            "󰤢",
-            "󰤥",
-            "󰤨"   // sehr stark
-        ]
-    },
-    "custom/bluetooth": {
-        "exec": "pactl list cards short | grep -q bluez && echo '' || echo '󰂲'",
-        "interval": 5,
-        "tooltip": false,
-        "on-click": "kitty bluetui"
-    }
-}
+//═══════════════════════════════════════ Left ═══════════════════════════════════════╗
+                                                                                    //║
+  "custom/launcher": {                                                              //║
+      "format": "󰣇",                                                                //║
+      "on-click": "exec kitty --title launcher l",                                  //║
+      "tooltip": false                                                              //║
+  },                                                                                //║
+                                                                                    //║
+  "tray": {                                                                         //║
+    "icon-size": 16,                                                                //║
+    "spacing": 8                                                                    //║
+  },                                                                                //║
+                                                                                    //║
+  "wlr/taskbar": {                                                                  //║
+      "format": "{icon}",                                                           //║
+      "on-click": "activate",                                                       //║
+      "on-click-middle": "close"                                                    //║
+  },                                                                                //║
+                                                                                    //║
+//══════════════════════════════════════ Left ════════════════════════════════════════╝
+
+//══════════════════════════════════════ Center ══════════════════════════════════════╗
+                                                                                    //║
+  "clock#time": {                                                                   //║
+      "interval": 1,                                                                //║
+      "format": " {:%H:%M:%S}",                                                    //║
+      "on-click": "kitty --title clock tty-clock -sD",                              //║
+      "tooltip": false                                                              //║
+  },                                                                                //║
+                                                                                    //║
+  "clock#date": {                                                                   //║
+      "tooltip": false,                                                             //║
+      "interval": 60,                                                               //║
+      "format": "󰸘 {:%d/%m}",                                                       //║
+      "on-click": "kitty --title calander calcurse"                                 //║
+  },                                                                                //║
+                                                                                    //║
+  "hyprland/workspaces": {                                                          //║
+    "format": "{icon}",                                                             //║
+    "on-click": "activate",                                                         //║
+    "all-outputs": false,                                                           //║
+    "format-icons": {"default": "", "active": "", "empty": ""},                  //║
+    "persistent-workspaces": { "*": 5 }                                             //║
+  },                                                                                //║
+                                                                                    //║
+  "mpris": {                                                                        //║
+    "format": "󰎆 {title}",                                                          //║
+    "format-paused": "󰏤 {title}",                                                   //║
+    "max-length": 20,                                                               //║
+    "min-length": 20,                                                               //║
+    "tooltip": false                                                                //║
+  },                                                                                //║
+                                                                                    //║
+  "pulseaudio": {                                                                   //║
+    "max-length": 8,                                                                //║
+    "min-length": 8,                                                                //║
+    "scroll-step": 5,                                                               //║
+    "format-muted": "󰝟",                                                            //║
+    "format": "{volume}% {icon}",                                                   //║
+    "format-bluetooth": "{volume}% ",                                              //║
+    "on-click": "kitty --title wiremix wiremix",                                    //║
+    "ignored-sinks": ["Easy Effects Sink"],                                         //║
+    "format-icons": ["", "", "", ""]                                            //║
+  },                                                                                //║
+                                                                                    //║
+//══════════════════════════════════════ Center ══════════════════════════════════════╝
+
+//═══════════════════════════════════════ Right ══════════════════════════════════════╗
+                                                                                    //║
+  "bluetooth": {                                                                    //║
+    "format": "󰂯 ",                                                                 //║
+    "format-connected": "󰂱",                                                        //║
+    "format-disabled": "󰂲",                                                         //║
+    "tooltip-format": "Not connected",                                              //║
+    "tooltip-format-connected": "{device_alias}",                                   //║
+    "tooltip-format-enumerate-connected": "{device_alias}",                         //║
+    "on-click": "kitty --title bluetui bluetui"                                     //║
+  },                                                                                //║
+                                                                                    //║
+  "network": {                                                                      //║
+    "format-wifi": " 󰤨 ",                                                           //║
+    "format-ethernet": "󰈀",                                                         //║
+    "format-disconnected": "󰤭",                                                     //║
+    "tooltip-format-wifi": "{essid}  {signalStrength}%",                            //║
+    "tooltip-format-ethernet": "{ifname}",                                          //║
+    "tooltip-format-disconnected": "Not connected",                                 //║
+    "on-click": "kitty --title impala impala",                                      //║
+    "max-length": 20                                                                //║
+  },                                                                                //║
+                                                                                    //║
+  "battery": {                                                                      //║
+    "format": "{icon} {capacity}%",                                                 //║
+    "format-charging": "󰂄 {capacity}%",                                             //║
+    "format-plugged": "󰚥 {capacity}%",                                              //║
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],             //║
+    "states": { "warning": 30, "critical": 15 },                                    //║
+    "tooltip": false                                                                //║
+  }                                                                                 //║
+}                                                                                   //║
+//═══════════════════════════════════════ Right ══════════════════════════════════════╝

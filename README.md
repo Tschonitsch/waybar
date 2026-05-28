@@ -1,2 +1,2 @@
 # Waybar preview
-![Preview](example.png)
+![Preview](assets/example.mp4)
